@@ -51,7 +51,7 @@ const RegisterItem = (props) => {
                     <div className='flex flex-col gap-y-4 py-10'>
                         <button className={buttonStyle + ` mr-2 hover:bg-[#deedec] text-slate-600 font-semibold`}>Sign Up</button>
                         <Link to="/SignIn">
-                            <button className='font-semibold text-xs text-[#83a9a5] hover:text-[#5f6060]'>Alredy have an account? <span className='font-extrabold'>Sign in</span> here</button>
+                            <button className='font-semibold text-xs text-[#83a9a5] hover:text-[#5f6060]'>Alredy have an account ?<span className='font-extrabold'>Sign in</span> here</button>
                         </Link>
                     </div>
                 </div>
