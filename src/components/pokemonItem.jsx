@@ -93,6 +93,7 @@ const PokemonItem = () => {
     ]
 
     const addPokemons = (item) => {
+        console.log(item)
         const myPokemonslocalstorage = localStorage.getItem('pokemonData')
         console.log(myPokemonslocalstorage)
 
@@ -137,14 +138,14 @@ const PokemonItem = () => {
                             </div>
                             <div className='text-right pr-3'>
                                 {/* The button to open modal */}
-                                <label htmlFor="modal" className="btn btn-sm border-0  bg-[#55a8a3] text-slate-700 font-medium text-sm uppercase rounded-md hover:bg-[#bfdfde]">Add</label>
-                                <input type="checkbox" id="modal" className="modal-toggle" />
+                                <label htmlFor={"modal" + pokemon.id} className="btn btn-sm border-0  bg-[#55a8a3] text-slate-700 font-medium text-sm uppercase rounded-md hover:bg-[#bfdfde]">Add</label>
+                                <input type="checkbox" id={"modal" + pokemon.id} className="modal-toggle" />
                                 <div className="modal modal-bottom sm:modal-middle">
                                     <div className="modal-box text-left">
                                         <h3 className="font-semibold text-slate-600 text-base">Add pokedex to My Pokemon ?</h3>
                                         <div className="modal-action">
-                                            <label htmlFor="modal" className="btn btn-sm">Cancel</label>
-                                            <label htmlFor="modal" className="btn btn-sm btn-accent" onClick={() => addPokemons(pokemon)}>Yes !</label>
+                                            <label htmlFor={"modal" + pokemon.id} className="btn btn-sm">Cancel</label>
+                                            <label htmlFor={"modal" + pokemon.id} className="btn btn-sm btn-accent" onClick={() => addPokemons(pokemon)}>Yes !</label>
 
                                         </div>
                                     </div>
