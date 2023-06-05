@@ -77,7 +77,7 @@ const MyPokemon = () => {
                     return (
                         <div key={index} id={item?.id}
                             className='bg-white/75 p-4 rounded-3xl'>
-                            <img src={item?.avatar} alt="" onClick={() => navigate(`/pokemons/${item.id}`)} className='h-52 mx-auto' />
+                            <img src={item?.avatar} alt="" onClick={() => navigate(`/pokemons/${item.pokemon_id}`)} className='h-52 mx-auto' />
                             <h4 className='text-slate-700 text-base md:text-lg font-semibold py-3  text-center uppercase'>{item?.name}</h4>
                             <div className='text-right'>
                                 <button

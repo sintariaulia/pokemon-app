@@ -62,17 +62,15 @@ const DetailPokemon = () => {
     }
 
     return (
-        <div className='px-4 h-[900px]'>
+        <div className='px-10 h-[900px]'>
 
-            <div className="bg-white/60 items-center mt-10 p-6 rounded-3xl max-w-md mx-auto sm:max-w-lg md:max-w-2xl grid lg:grid-cols-2 lg:max-w-5xl xl:max-w-[75rem]">
+            <div className="bg-white/60 items-center mt-10 p-6 rounded-3xl max-w-md mx-auto sm:max-w-lg md:max-w-2xl grid lg:grid-cols-2 lg:max-w-5xl xl:max-w-[70rem]">
                 {/* lebar layar lg */}
-                <div className="hidden lg:block px-5">
+                <div className="hidden lg:block mx-auto">
                     <img src={pokemonData?.avatar}
                         alt="event"
-                        className="w-[400px] xl:w-[450px] rounded-xl shadow-xl " />
+                        className="w-[350px] xl:w-[400px] rounded-xl shadow-xl " />
                 </div>
-                {/* lebar layar lg */}
-
                 <div className="lg:py-10 ">
                     <h2 className="text-[22px] font-bold text-slate-700 pb-4 md:text-3xl lg:text-4xl">{pokemonData?.name}</h2>
                     <img src={pokemonData?.avatar} alt="event"

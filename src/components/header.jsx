@@ -37,7 +37,7 @@ function Header() {
     }
 
     return (
-        <div className="header bg-white/30 flex items-center justify-between px-10 sm:px-16 md:px-10 lg:px-20 py-2">
+        <div className="header bg-white/30 flex items-center justify-between px-10 sm:px-16 md:px-10 lg:px-20 py-[2px]">
             {/* logo */}
             <Link to="/">
                 <img src="/img/icon.png" alt="" className="logo w-[75px] h-[60px] md:w-[85px] md:h-[70px] lg:w-[100px] lg:h-[78px] " />
