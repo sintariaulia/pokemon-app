@@ -46,34 +46,34 @@ function Index() {
 
     const addPokemon = async (item) => {
         try {
-          const getLocalStorageIdUserLogin = localStorage.getItem('idUserLogged');
-          const data = {
-            pokemon_id: item.id,
-            user_id: getLocalStorageIdUserLogin,
-          };
-    
-          const existingDataDb = await axios.get('http://localhost:3001/pokemons/collection', {
-            params: {
-              pokemon_id: item.id,
-              user_id: getLocalStorageIdUserLogin,
-             },
-          });
-    
-          if (existingDataDb.data?.datas?.find(data => data.pokemons_id === item.id)) {
-            toast.error("Pokemon already exists",{
-              autoClose: 200
+            const getLocalStorageIdUserLogin = localStorage.getItem('idUser');
+            const data = {
+                pokemon_id: item.id,
+                user_id: getLocalStorageIdUserLogin,
+            };
+
+            const existingDataDb = await axios.get('http://localhost:3001/pokemons/collection', {
+                params: {
+                    pokemon_id: item.id,
+                    user_id: getLocalStorageIdUserLogin,
+                },
+            });
+
+            if (existingDataDb.data?.datas?.find(data => data.pokemons_id === item.id)) {
+                toast.error("Pokemon already exists", {
+                    autoClose: 200
+                })
+                return;
+            }
+            const response = await axios.post('http://localhost:3001/pokemons/collection', data);
+            toast.success("Pokemon Added", {
+                autoClose: 1000
             })
-            return;      
-          }
-          const response = await axios.post('http://localhost:3001/pokemons/collection', data);
-          toast.success("Pokemon Added",{
-            autoClose: 1000
-          })
-          console.log('Data berhasil ditambahkan ke database:', response.data);
+            console.log('Data berhasil ditambahkan ke database:', response.data);
         } catch (error) {
-          console.log('Gagal menambahkan data ke database:', error.message);
+            console.log('Gagal menambahkan data ke database:', error.message);
         }
-      };
+    };
 
     // const addPokemons = async (item) => {
     //     const myPokemonslocalstorage = localStorage.getItem('pokemonData');
@@ -109,15 +109,18 @@ function Index() {
                             className='bg-white/70 p-3 rounded-3xl'>
                             <img src={item?.avatar} alt="" onClick={() => navigate(`/pokemons/${item.id}`)} className='h-52 mx-auto' />
                             <h4 className='text-slate-700 text-base md:text-lg font-semibold py-3  text-center uppercase'>{item?.name}</h4>
-                            <div className='text-right'>
+                            <div className='pr-20 lg:pr-[70px] 2xl:pr-24'>
+                                <h6 className='text-slate-700 text-[14px] text-center rounded-2xl bg-[#c6e1df] font-normal'>{item?.type}</h6>
+                            </div>
+                            <div className='text-right pt-2'>
                                 {/* {isAlreadyAdd ? (
                                     <span></span>
                                 ) : ( */}
-                                    <button
-                                        onClick={() => addPokemon(item)}
-                                        className="btn btn-sm border-0  bg-[#55a8a3] text-slate-700 font-medium text-sm rounded-md hover:bg-[#bfdfde]">
-                                        <FaPlus />
-                                    </button>
+                                <button
+                                    onClick={() => addPokemon(item)}
+                                    className="btn btn-sm border-0  bg-[#55a8a3] text-slate-700 font-medium text-sm rounded-md hover:bg-[#bfdfde]">
+                                    <FaPlus />
+                                </button>
                                 {/* )} */}
 
                             </div>

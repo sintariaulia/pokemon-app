@@ -25,7 +25,7 @@ const SignIn = () => {
                 const token = response.data.token;
                 if (token) {
                     localStorage.setItem("authToken", token);
-                    localStorage.setItem("idUserLogged", response.data.id);
+                    localStorage.setItem("idUser", response.data.id);
                     localStorage.removeItem("authTokenRegister");
                     console.log(response);
                     window.location.href = "/";

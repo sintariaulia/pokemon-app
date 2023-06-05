@@ -62,7 +62,7 @@ const DetailPokemon = () => {
     }
 
     return (
-        <div className='px-10 h-[900px]'>
+        <div className='px-4 h-[900px]'>
 
             <div className="bg-white/60 items-center mt-10 p-6 rounded-3xl max-w-md mx-auto sm:max-w-lg md:max-w-2xl grid lg:grid-cols-2 lg:max-w-5xl xl:max-w-[70rem]">
                 {/* lebar layar lg */}
@@ -71,20 +71,21 @@ const DetailPokemon = () => {
                         alt="event"
                         className="w-[350px] xl:w-[400px] rounded-xl shadow-xl " />
                 </div>
+
                 <div className="lg:py-10 ">
-                    <h2 className="text-[22px] font-bold text-slate-700 pb-4 md:text-3xl lg:text-4xl">{pokemonData?.name}</h2>
+                    <h2 className="text-[22.5px] font-bold text-slate-700 pb-4 md:text-3xl lg:text-4xl">{pokemonData?.name}</h2>
                     <img src={pokemonData?.avatar} alt="event"
-                        className="pt-4 rounded-xl shadow-xl w-[250px] mx-auto sm:py-10 sm:w-[300px] lg:hidden" />
-                    <h6 className='font-bold lg:pt-2 md:pt-6 pt-5 text-slate-700'>Types</h6>
-                    <p className="pt-3 text-slate-600 text-justify sm:pt-5 md:pt-2 text-sm sm:text-base">
-                        <span>{pokemonData?.type}</span>
+                        className="pt- rounded-xl shadow-xl w-[250px] mx-auto sm:py-10 sm:w-[300px] lg:hidden" />
+                    <h6 className='font-bold lg:text-lg pt-7 lg:pt-9 text-slate-700'>Types</h6>
+                    <p className="pt-[6px] text-slate-700 font-medium text-justify sm:pt-5 md:pt-1 text-sm sm:text-base">
+                        <span className='pl-5'>{pokemonData?.type}</span>
                     </p>
-                    <h6 className='font-bold lg:pt-2 md:pt-6 pt-5 text-slate-700'>Description</h6>
-                    <p className="pt-3 text-slate-600 text-justify sm:pt-5 md:pt-2 text-sm sm:text-base">
+                    <h6 className='font-bold lg:pt-6 lg:text-lg md:pt-6 pt-5 text-slate-700'>Description</h6>
+                    <p className="pt-[6px] text-slate-700 px-5 text-justify sm:pt-5 md:pt-2 text-sm sm:text-base">
                         <span>{pokemonData?.description}</span>
                     </p>
                     {isAdded ? null : (
-                        <div className="text-center pt-8 font-bold" >
+                        <div className="text-center pt-8 pb-10 lg:pt-16 font-bold" >
                             <button
                                 onClick={() => setPokemonAdd(pokemonData)}
                                 className="rounded-3xl bg-[#82b5b1] px-16 py-2 text-slate-800 uppercase hover:bg-[#afd1ce]" >

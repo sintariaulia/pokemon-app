@@ -9,7 +9,6 @@ const IndexUser = () => {
     useEffect(() => {
         axios.get('https://reqres.in/api/users?page=2')
             .then(response => {
-                console.log(response)
                 setUser(response.data.data)
             }).catch(error => console.log(error))
     }, [])

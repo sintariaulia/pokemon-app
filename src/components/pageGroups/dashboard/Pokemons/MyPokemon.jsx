@@ -16,7 +16,6 @@ const MyPokemon = () => {
     const getMyPokemons = async () => {
         try {
             const response = await axios.get('http://localhost:3001/pokemons/collection');
-            console.log('response', response.data.datas);
             const mypokemonList = response.data.datas;
             setMyPokemons(mypokemonList);
         } catch (error) {
@@ -79,6 +78,9 @@ const MyPokemon = () => {
                             className='bg-white/75 p-4 rounded-3xl'>
                             <img src={item?.avatar} alt="" onClick={() => navigate(`/pokemons/${item.pokemon_id}`)} className='h-52 mx-auto' />
                             <h4 className='text-slate-700 text-base md:text-lg font-semibold py-3  text-center uppercase'>{item?.name}</h4>
+                            <div className='pr-20 lg:pr-[70px] 2xl:pr-24'>
+                                <h6 className='text-slate-700 text-[14px] text-center rounded-2xl bg-[#c6e1df] font-normal'>{item?.type}</h6>
+                            </div>
                             <div className='text-right'>
                                 <button
                                     onClick={() => deletePokemon(item.id)}
