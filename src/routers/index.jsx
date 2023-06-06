@@ -7,7 +7,7 @@ import IndexPokemon from '../pages/dashboard/pokemons/index';
 import MyPokemons from '../pages/dashboard/pokemons/my-pokemon';
 import DetailPokemons from '../pages/dashboard/pokemons/[id]';
 
-import IndexUser from '../services/users';
+import Users from '../pages/dashboard/users';
 import Todos from '../pages/dashboard/todos';
 
 import SignIns from '../pages/auth/signins';
@@ -20,7 +20,7 @@ function IndexRouter() {
         <Routes>
             <Route path='/' element={<Hero />}/>
             <Route path='/Todos' element={<Todos />} />
-            <Route path='/Users' element={<IndexUser />} />
+            <Route path='/Users' element={<Users />} />
 
             <Route path="/Pokemons" element={isLoggedIn() ? <IndexPokemon /> : <Navigate to="/Login" />} />
             <Route path="/MyPokemons" element={isLoggedIn() ? <MyPokemons /> : <Navigate to="/Login" />} />
