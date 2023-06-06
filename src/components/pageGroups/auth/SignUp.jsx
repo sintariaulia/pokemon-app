@@ -14,9 +14,8 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await getSignUp(name, email, password);
+            await getSignUp(name, email, password);
             localStorage.setItem("authTokenRegister", true);
-            console.log(response);
             navigate("/SignIn");
             toast.success("Register Account Succefully!", {
                 autoClose: 1500

@@ -28,7 +28,7 @@ const SignIn = () => {
                 window.location.href = "/";
             } else {
                 toast.error("Your Account Is Not Valid", {
-                    autoClose: 2500
+                    autoClose: 1500
                 });
             }
         } catch (error) {
