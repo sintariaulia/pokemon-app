@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../../components/header'
 import Todo from '../../components/pageGroups/dashboard/Todo'
 
-function Todos() {
+const Todos = () => {
   return (
     <div>
         <Header />

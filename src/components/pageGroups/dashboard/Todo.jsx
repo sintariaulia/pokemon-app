@@ -30,7 +30,7 @@ const Todo = () => {
         }
     }, [])
 
-    function addList() {
+    const addList = () => {
         if (newInput !== "") {
             if (editID) {
                 const editArray = inputs.find((input) => input.id === editID);
@@ -45,12 +45,12 @@ const Todo = () => {
         }
     };
 
-    function deleteList(id) {
+    const deleteList = (id) => {
         const newArray = inputs.filter(input => input.id !== id);
         handleChangeInput([...newArray]);
     };
 
-    function editList(id) {
+    const editList = (id) => {
         const editArray = inputs.find(input => input.id === id);
         setNewInput(editArray.newInput);
         setEditID(id);
@@ -104,14 +104,12 @@ const Todo = () => {
                                         </button>
                                     </div>
                                 </div>
-
                             )
                         })}
                     </ul>
                 </div>
             </div>
         </div>
-
         
     )
 }

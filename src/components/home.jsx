@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Home() {
+const Home = () => {
 
     const downloadImgStyle = 'border-[#232A4E] h-[28.5px] w-[100px] rounded-[10px] md:w-[7.7rem] md:h-[2.3rem] lg:rounded-[13px] lg:h-[3rem] lg:w-[10rem]'
 

@@ -15,23 +15,22 @@ const HeaderMobile = ({ open, toggelMenu }) => {
         }
     }, []);
 
-    function handleLogin() {
+    const handleLogin = () => {
         window.location.href = "/SignIn"
     }
 
-    function handleLogout() {
+    const handleLogout = () => {
         localStorage.removeItem("authToken");
         localStorage.removeItem("idUserLogged");
         setIsLogin(false);
         window.location.href = "/SignIn"
     }
 
-    function handleModal() {
+    const handleModal = () => {
         setModal(true);
     }
 
     return (
-
         <ul className={`md:hidden flex flex-col bg-[#d5e6e7] text-lg text-slate-700 font-semibold absolute w-full h-full bottom-0 py-24 pl-14 duration-500 ${open ? 'left-0' : 'left-[-100%]'}`}>
             <li className='py-5 px-3 inline-block hover:text-white'>
                 <Link to="/" className=''>

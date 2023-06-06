@@ -2,7 +2,7 @@ import React from "react";
 import Home from "../components/home";
 import Header from "../components/header";
 
-function Hero() {
+const Hero = () => {
     return (
         <div>
             <Header />

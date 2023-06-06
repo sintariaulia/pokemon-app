@@ -17,31 +17,24 @@ const SignIn = () => {
         setPassword(e.target.value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/login', { email, password })
-            .then((response) => {
-                console.log("token ", response.data.token);
-                const token = response.data.token;
-                if (token) {
-                    localStorage.setItem("authToken", token);
-                    localStorage.setItem("idUser", response.data.id);
-                    localStorage.removeItem("authTokenRegister");
-                    console.log(response);
-                    window.location.href = "/";
-                } else {
-                    // Tampilkan pesan kesalahan atau lakukan tindakan lain
-                    toast.error("You'r Account Is Not Valid", {
-                        autoClose: 2500
-                    });
-                }
-                
-            })
-            .catch((error) => {
-                toast.error("Please add a valid data", {
+        try {
+            const response = await axios.post('http://localhost:3001/login', { email, password });
+            const token = response.data?.token;
+            if (token) {
+                localStorage.setItem("authToken", token);
+                localStorage.setItem("idUser", response.data?.id);
+                localStorage.removeItem("authTokenRegister");
+                window.location.href = "/";
+            } else {
+                toast.error("Your Account Is Not Valid", {
                     autoClose: 2500
                 });
-            });
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
@@ -56,31 +49,31 @@ const SignIn = () => {
 
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor='email' className='text-sm font-medium text-slate-600'>Email</label>
+                            <label htmlFor='email' className='text-[14.7px] font-medium text-slate-600'>Email</label>
                             <input value={email} onChange={handleEmailChange}
                                 type='email' id='email' name='email'
                                 className='w-full border-2 border-gray-100 rounded-xl p-2 mt-1'
                                 placeholder='emailaddres@gmail.com' />
                         </div>
                         <div className='pt-3'>
-                            <label htmlFor='password' className='text-sm font-medium text-slate-600'>Password</label>
+                            <label htmlFor='password' className='text-[14.7px] font-medium text-slate-600'>Password</label>
                             <input value={password} onChange={handlePasswordChange}
                                 type='password' id='password' name='password'
                                 className='w-full border-2 border-gray-100 rounded-xl p-2 mt-1'
                                 placeholder='********' />
                         </div>
-                        <button className='pt-2 font-medium text-xs text-[#70928e] hover:text-[#5f6060]'>Forgot Password</button>
+                        <button className='pt-2 xl:pl-40 font-medium text-[12.5px] text-[#70928e] hover:text-[#5f6060]'>Forgot Password</button>
 
                         {/* BUTTON */}
                         <div className='flex flex-col gap-y-4 py-10'>
                             <button type='submit'
-                                className="bg-[#b1ced8] rounded-xl  py-[5px] mr-2 hover:bg-[#acc0be] text-slate-600 font-semibold" >
+                                className="bg-[#b1ced8] rounded-2xl text-[16px]  py-[5px] mr-2 hover:bg-[#acc0be] text-slate-600 font-semibold" >
                                 Sign In
                             </button>
                             <Link to="/SignUp">
-                                <button className='font-semibold text-xs text-[#83a9a5] hover:text-[#5f6060]'>
-                                    Don't have an account?
-                                    <span className='font-extrabold'>Sign Up</span>
+                                <button className='btn-link font-semibold text-sm text-[#83a9a5] hover:text-[#5f6060]'>
+                                    Don't have an account ?
+                                    <span className='font-extrabold'> Sign Up</span>
                                 </button>
                             </Link>
 

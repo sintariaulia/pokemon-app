@@ -5,28 +5,28 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
-    const buttonStyle = 'bg-[#b1ced8] rounded-[8px]  py-1'
+    const buttonStyle = 'bg-[#b1ced8] rounded-2xl  py-1'
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/register', { name, email, password })
-            .then((response) => {
-                localStorage.setItem("authTokenRegister", true);
-                console.log(response);
-                navigate("/SignIn");
-                toast.success("Register Account Succefully!", {
-                    autoClose: 3000
-                });
-            })
-            .catch((error) => {
-                toast.error("Please add a valid data", {
-                    autoClose: 2500
-                });
+        try {
+            const response = await axios.post('http://localhost:3001/register', { name, email, password });
+            localStorage.setItem("authTokenRegister", true);
+            console.log(response);
+            navigate("/SignIn");
+            toast.success("Register Account Succefully!", {
+                autoClose: 1500
             });
+        } catch (error) {
+            toast.error("Please add a valid data", {
+                autoClose: 1500
+            });
+        }
+
     }
 
     return (
@@ -40,21 +40,21 @@ const SignUp = () => {
                     <img src="/img/icon3.jpg" alt="" className='md:hidden rounded-xl py-5' />
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor='name' className='text-sm font-medium text-slate-600'>Username</label>
+                            <label htmlFor='name' className='text-[14.7px] font-medium text-slate-600'>Full Name</label>
                             <input value={name} onChange={(e) => setName(e.target.value)}
                                 type='name' id='name'
                                 className='w-full border-2 border-gray-100 rounded-xl p-2 mt-1'
                                 placeholder='username' />
                         </div>
                         <div className='pt-3'>
-                            <label htmlFor='email' className='text-sm font-medium text-slate-600'>Email</label>
+                            <label htmlFor='email' className='text-[14.7px] font-medium text-slate-600'>Email</label>
                             <input value={email} onChange={(e) => setEmail(e.target.value)}
                                 type='email' id='email' name='email'
                                 className='w-full border-2 border-gray-100 rounded-xl p-2 mt-1'
                                 placeholder='emailaddres@gmail.com' />
                         </div>
                         <div className='pt-3'>
-                            <label htmlFor='password' className='text-sm font-medium text-slate-600'>Password</label>
+                            <label htmlFor='password' className='text-[14.7px] font-medium text-slate-600'>Password</label>
                             <input value={password} onChange={(e) => setPassword(e.target.value)}
                                 type='password' id='password' name='password'
                                 className='w-full border-2 border-gray-100 rounded-xl p-2 mt-1'
@@ -63,9 +63,9 @@ const SignUp = () => {
 
                         {/* BUTTON */}
                         <div className='flex flex-col gap-y-4 py-10'>
-                            <button className={buttonStyle + ` mr-2 hover:bg-[#deedec] text-slate-600 font-semibold`}>Sign Up</button>
+                            <button className={buttonStyle + ` mr-2 hover:bg-[#deedec] text-slate-600 text-[16px] font-semibold`}>Sign Up</button>
                             <Link to="/SignIn">
-                                <button className='font-semibold text-xs text-[#83a9a5] hover:text-[#5f6060]'>Alredy have an account? <span className='font-extrabold'>Sign in</span> here</button>
+                                <button className='btn-link font-semibold text-sm text-[#83a9a5] hover:text-[#5f6060]'>Alredy have an account? <span className='font-extrabold'>Sign in</span> here</button>
                             </Link>
                         </div>
 

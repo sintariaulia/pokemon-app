@@ -4,8 +4,7 @@ import { isLoggedIn } from "../services/auth";
 import HeaderMobile from './headerMobile';
 
 const Header = () => {
-
-    const buttonStyle = 'border-[2px] rounded-full bg-[#b1ced8] hover:bg-[#deedec] border-[#deedec] px-[30px] py-[8px]'
+    const buttonStyle = 'border-[2px] rounded-full text-[16.5px] bg-[#b1ced8] hover:bg-[#deedec] border-[#deedec] px-[30px] py-[8px]'
     const [open, setOpen] = useState(false);
     const [modal, setModal] = useState(false);
     const [isLogin, setIsLogin] = useState(false);
@@ -21,18 +20,17 @@ const Header = () => {
         }
     }, []);
 
-    function handleLogin() {
+    const handleLogin = () => {
         window.location.href = "/SignIn"
     }
 
-    function handleLogout() {
-        localStorage.removeItem("authToken");
-        localStorage.removeItem("idUserLogged");
+    const handleLogout = () => {
+        localStorage.clear();
         setIsLogin(false);
         window.location.href = "/SignIn"
     }
 
-    function handleModal() {
+    const handleModal = () => {
         setModal(true);
     }
 
@@ -48,14 +46,12 @@ const Header = () => {
                     </div>
                 </div>
 
-
-                <ul className='md:flex hidden items-center gap-8 text-slate-700 font-semibold '>
+                <ul className='md:flex hidden items-center text-[16.5px] gap-8 text-slate-700 font-semibold '>
                     <li className='py-7 px-3 inline-block hover:text-white'>
                         <Link to="/" className=''>
                             Home
                         </Link>
                     </li>
-
                     {isLoggedIn() && (
                         <>
                             <li className='py-7 px-3 inline-block hover:text-white'>
@@ -70,7 +66,6 @@ const Header = () => {
                             </li>
                         </>
                     )}
-
                     <li className='py-7 px-3 inline-block hover:text-white'>
                         <Link to="/Todos">
                             Todo
@@ -82,7 +77,6 @@ const Header = () => {
                         </Link>
                     </li>
                 </ul>
-
 
                 <div className='md:block hidden text-slate-700 font-semibold'>
                     <button
