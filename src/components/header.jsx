@@ -39,11 +39,11 @@ const Header = () => {
     return (
         <nav className='bg-white/40'>
             <div className='flex items-center font-medium justify-around'>
-                <div className='z-50 p-1 md:w-auto w-full flex justify-between'>
+                <div className='z-50 p-2 md:w-auto w-full flex justify-between'>
                     <Link to="/">
-                        <img src="/img/icon.png" alt="logoIcon" className='md:cursor-pointer mx-5 md:mx-0 w-[75px] h-[60px] md:w-[85px] md:h-[70px] lg:w-[100px] lg:h-[78px]' />
+                        <img src="/img/icon.png" alt="logoIcon" className='md:cursor-pointer mx-5 md:mx-0 w-[85px] h-[70px] lg:w-[100px] lg:h-[78px]' />
                     </Link>
-                    <div className='block md:hidden m-3 px-5 text-slate-700 text-[26px]' onClick={toggleMenu}>
+                    <div className='block md:hidden m-3 px-5 text-slate-700 text-3xl' onClick={toggleMenu}>
                         <ion-icon name={`${open ? 'close-circle' : 'menu'}`}></ion-icon>
                     </div>
                 </div>

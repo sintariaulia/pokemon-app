@@ -68,7 +68,7 @@ const MyPokemon = () => {
 
     return (
         <div className="flex flex-col justify-start py-8">
-            <h1 className='text-lg md:text-[22px] lg:text-[24px] font-bold px-16 sm:px-20 md:px-24 lg:px-32 pt-5 text-slate-700'>My Pokemons</h1>
+            <h1 className='text-[22px] lg:text-[24px] font-bold px-16 sm:px-20 md:px-24 lg:px-32 pt-5 text-slate-700'>My Pokemons</h1>
             <div className="px-14 sm:px-20 md:px-16  lg:px-32 xl:px-48 grid grid-cols sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-8 gap-4 sm:gap-7 lg:gap-8">
 
                 {/* Data From Storage */}

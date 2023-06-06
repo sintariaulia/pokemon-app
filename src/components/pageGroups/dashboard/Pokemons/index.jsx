@@ -96,7 +96,7 @@ function Index() {
 
     return (
         <div className="flex flex-col justify-start py-4">
-            <h1 className='font-bold text-[20px] sm:text-[21px] md:text-[22px] lg:text-[24px] px-14 sm:px-20 md:px-24 lg:px-32 pt-5 md:pt-8 lg:pt-10 text-slate-700'>Pokemons</h1>
+            <h1 className='font-bold text-[22px] lg:text-[24px] px-14 sm:px-20 md:px-24 lg:px-32 pt-5 md:pt-8 lg:pt-10 text-slate-700'>Pokemons</h1>
             <div className="px-[68px] md:px-16 lg:px-20 xl:px-[73px] 2xl:px-48 grid grid-cols sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-6 md:py-8 gap-6 sm:gap-8 md:gap-9 lg:gap-7">
 
                 {/* Looping Data List */}

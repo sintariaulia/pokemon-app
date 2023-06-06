@@ -59,7 +59,7 @@ const Todo = () => {
     return (
         <div className='py-12 px-3 h-[900px]'>
             <div className='bg-white/50  py-3 rounded-3xl shadow-2xl max-w-md mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-[50rem]'>
-                <h1 className='text-xl sm:text-[22px] md:text-2xl lg:text-[27px] font-extrabold text-center py-4 pb-7 text-slate-600'>Todo List</h1>
+                <h1 className='text-[25px] md:text-2xl lg:text-[27px] font-extrabold text-center py-4 pb-7 text-slate-600'>Todo List</h1>
                 {/* form todo */}
                 <form onSubmit={(e) => {
                     e.preventDefault()
