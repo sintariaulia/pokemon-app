@@ -41,7 +41,7 @@ const Header = () => {
             <div className='flex items-center font-medium justify-around'>
                 <div className='z-50 p-1 md:w-auto w-full flex justify-between'>
                     <Link to="/">
-                        <img src="/img/icon.png" alt="logoIcon" className='md:cursor-pointer  w-[75px] h-[60px] md:w-[85px] md:h-[70px] lg:w-[100px] lg:h-[78px]' />
+                        <img src="/img/icon.png" alt="logoIcon" className='md:cursor-pointer mx-5 md:mx-0 w-[75px] h-[60px] md:w-[85px] md:h-[70px] lg:w-[100px] lg:h-[78px]' />
                     </Link>
                     <div className='block md:hidden m-3 px-5 text-slate-700 text-[26px]' onClick={toggleMenu}>
                         <ion-icon name={`${open ? 'close-circle' : 'menu'}`}></ion-icon>

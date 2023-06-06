@@ -32,7 +32,7 @@ const HeaderMobile = ({ open, toggelMenu }) => {
 
     return (
 
-        <ul className={`md:hidden flex flex-col bg-[#d5e6e7] text-[14px] text-slate-700 font-semibold absolute w-full h-full bottom-0 py-24 pl-14 duration-500 ${open ? 'left-0' : 'left-[-100%]'}`}>
+        <ul className={`md:hidden flex flex-col bg-[#d5e6e7] text-[15px] text-slate-700 font-semibold absolute w-full h-full bottom-0 py-24 pl-14 duration-500 ${open ? 'left-0' : 'left-[-100%]'}`}>
             <li className='py-5 px-3 inline-block hover:text-white'>
                 <Link to="/" className=''>
                     Home
@@ -73,13 +73,13 @@ const HeaderMobile = ({ open, toggelMenu }) => {
                 </button>
 
                 {modal && (
-                    <div className="fixed inset-0 bg-black bg-opacity-30 z-50 flex items-center justify-center">
+                    <div className="fixed inset-0 bg-black bg-opacity-20 z-50 flex items-center justify-center">
                         <input type="checkbox" id="my-modal" className="modal-toggle" checked={modal} />
                         <div className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box text-left bg-slate-800">
                                 <p className="text-sm text-red-500 py-2">Logout Confirmation</p>
                                 <h3 className="font-semibold text-white text-base ">Are you sure to Logout ?</h3>
-                                <div className="modal-action">
+                                <div className="modal-action ">
                                     <button className="btn btn-sm bg-slate-500" onClick={() => setModal(false)}>Cancel</button>
                                     <button className="btn btn-sm bg-red-600" onClick={handleLogout}>Logout</button>
                                 </div>
