@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import { getSignIn } from '../../../services/auth/index';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 const SignIn = () => {
     const [email, setEmail] = useState('')
@@ -20,7 +19,7 @@ const SignIn = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/login', { email, password });
+            const response = await getSignIn(email, password);
             const token = response.data?.token;
             if (token) {
                 localStorage.setItem("authToken", token);

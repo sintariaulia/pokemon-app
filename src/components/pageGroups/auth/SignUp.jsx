@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
-import axios from 'axios';
+import { getSignUp } from '../../../services/auth/index';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,7 +14,7 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/register', { name, email, password });
+            const response = await getSignUp(name, email, password);
             localStorage.setItem("authTokenRegister", true);
             console.log(response);
             navigate("/SignIn");
