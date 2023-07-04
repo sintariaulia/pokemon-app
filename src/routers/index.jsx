@@ -13,6 +13,8 @@ import Todos from '../pages/dashboard/todos';
 import SignIns from '../pages/auth/signins';
 import SignUps from '../pages/auth/signups';
 
+import Hellos from '../pages/dashboard/hello';
+
 
 function IndexRouter() {
   return (
@@ -21,6 +23,8 @@ function IndexRouter() {
             <Route path='/' element={<Hero />}/>
             <Route path='/Todos' element={<Todos />} />
             <Route path='/Users' element={<Users />} />
+            <Route path='/Hello' element={<Hellos />} />
+
 
             <Route path="/Pokemons" element={isLoggedIn() ? <IndexPokemon /> : <Navigate to="/Login" />} />
             <Route path="/MyPokemons" element={isLoggedIn() ? <MyPokemons /> : <Navigate to="/Login" />} />
